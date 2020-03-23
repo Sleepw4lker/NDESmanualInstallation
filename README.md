@@ -15,11 +15,12 @@ Add-WindowsFeature Web-Server -IncludeManagementTools
 Add-WindowsFeature ADCS-Device-Enrollment -IncludeManagementTools
 ```
 
-This will ensure the required binary files are present under C:\Windows\System32\certsrv\mscep-
+This will ensure the required binary files are present under C:\Windows\System32\certsrv\mscep.
 
 ### Replace this file with the one from the Repo
 
 C:\Windows\System32\inetsrv\Config\applicationHost.config
+The Original Version is included as applicationHost.config.original so that you can compare them if desired.
 
 ### Import Registry
 
