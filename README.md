@@ -20,6 +20,7 @@ This will ensure the required binary files are present under C:\Windows\System32
 ### Replace this file with the one from the Repo
 
 C:\Windows\System32\inetsrv\Config\applicationHost.config
+
 The Original Version is included as applicationHost.config.original so that you can compare them if desired.
 
 ### Import Registry
@@ -36,4 +37,13 @@ The Original Version is included as applicationHost.config.original so that you 
 
 ```cmd
 iisreset
+```
+
+### Update Target CA Configuration
+```cmd
+certutil -setreg CA\SubjectTemplate +UnstructuredName
+certutil -setreg CA\SubjectTemplate +UnstructuredAddress
+certutil -setreg CA\SubjectTemplate +DeviceSerialNumber
+net stop certsvc
+net start cetrsvc
 ```
